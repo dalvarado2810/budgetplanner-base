@@ -1,0 +1,52 @@
+[versions]
+junit = "4.13.2"
+test-runner = "1.6.2"
+agp = "8.9.2"
+kotlin = "2.1.20"
+core-ktx = "1.16.0"
+material3 = "1.3.2"
+maven-publish = "0.3.1"
+detekt = "1.23.6"
+navigation = "2.8.9"
+koin = "3.5.6"
+
+[libraries]
+
+# Test
+junit = { module = "junit:junit", version.ref = "junit" }
+test-runner = { module = "androidx.test:runner", version.ref = "test-runner" }
+
+# Android
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx"}
+
+# Koin
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+
+# Compose
+compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+
+# Gradle Plugins
+android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# Navigation
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
+
+# Linters
+detekt-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-pluging", version.ref = "detekt" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+maven-publish = { id = "com.vanniktech.gradle-maven-publish-plugin", version.ref = "maven-publish" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+[bundles]
+testing = ["junit", "test-runner"]
+androidx = ["androidx-core-ktx"]
+compose = ["compose-material3"]
+navigation = ["navigation-compose"]
+koin = ["koin-android", "koin-android-compose"]
