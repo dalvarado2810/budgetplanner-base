@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.daniel.base"
+    namespace = "com.daniel.budgetplanner.base"
 
     defaultConfig {
         minSdk = 26
