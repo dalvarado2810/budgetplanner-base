@@ -30,6 +30,9 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 android-gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
+# Kotlin
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+
 # Navigation
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation"}
 
@@ -37,9 +40,6 @@ navigation-compose = { module = "androidx.navigation:navigation-compose", versio
 detekt-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-pluging", version.ref = "detekt" }
 
 [plugins]
-android-library = { id = "com.android.library", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-maven-publish = { id = "com.vanniktech.gradle-maven-publish-plugin", version.ref = "maven-publish" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt"}
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
@@ -49,4 +49,5 @@ testing = ["junit", "test-runner"]
 androidx = ["androidx-core-ktx"]
 compose = ["compose-material3"]
 navigation = ["navigation-compose"]
+kotlin = ["kotlin-reflect"]
 koin = ["koin-android", "koin-android-compose"]
