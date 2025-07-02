@@ -33,17 +33,20 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    publishing {
+        singleVariant("release")
+    }
 }
 
 publishing {
     publications {
-        create<MavenPublication>("debug") {
+        create<MavenPublication>("release") {
             groupId = "com.daniel"
             artifactId = "base"
             version = "1.0.0"
 
             afterEvaluate {
-                from(components["debug"])
+                from(components["release"])
             }
 
             pom {
