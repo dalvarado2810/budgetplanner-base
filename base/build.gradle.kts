@@ -35,11 +35,30 @@ android {
     }
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("debug") {
+            groupId = "com.daniel"
+            artifactId = "base"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["debug"])
+            }
+
+            pom {
+                name.set("Budget Base")
+            }
+        }
+    }
+}
+
 dependencies {
     /* Testing */
     testImplementation(libs.bundles.testing)
 
     /* Kotlin */
+    implementation(libs.bundles.kotlin)
 
     /* AndroidX */
     implementation(libs.bundles.androidx)
